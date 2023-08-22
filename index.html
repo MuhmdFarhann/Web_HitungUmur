@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cek usia</title>
+    <style>
+        html, body, :root{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            border: 1px solid  black;
+            margin: 0 auto;
+            padding: 16px;
+            width: 500px;
+        }
+        #birthday {
+            padding: 16px;
+            font-size: 18px;
+        }
+        #cek-button{
+            padding: 12px;
+            background-color: black;
+            color: white;
+            cursor: pointer;
+            font-size: 18px;
+        }
+        #cek-button:hover{
+            background-color: white;
+            color: black;
+        }
+        label {
+            font-size: 20px;
+        }
+        .Result {
+            font-size: 18px;
+            color: red;
+            margin-top: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Cek Usia Anda</h2>
+        <label> masukan tahun lahir anda</label>
+        <input type="number" placeholder="Contoh: 1945" id="birthday"/>
+        <button id="cek-button" onclick="checkResult()"> cek usia </button>
+        <p class="Result" id="ResultView"></p>
+    </div>
+    <script>
+        function checkResult() {
+        const birthdayInput = document.getElementById("birthday");
+        const birthday = birthdayInput.value;
+
+        const now = new Date().getFullYear(); // bernilai tahun saat in sedang otomatis
+        const age = now - birthday ;
+
+        const ResultView = document.getElementById("ResultView")
+        ResultView.innerHTML = " Usia anda saat ini adalah " + age + " Tahun"
+        alert(calculate);
+        }
+    </script>
+</body>
+</html>
